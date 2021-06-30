@@ -41,12 +41,22 @@ public class PersonApi {
         return Response.ok();
     }
 
+    /**
+     * 删除个人
+     * @param personId 个人Id
+     * @return
+     */
     @DeleteMapping("/{personId}")
     public Response delete(@PathVariable String personId) {
         personApplicationService.deleteById(personId);
         return Response.ok();
     }
 
+    /**
+     * 查询个人详情
+     * @param personId 个人Id
+     * @return
+     */
     @GetMapping("/{personId}")
     public Response get(@PathVariable String personId) {
         Person person = personApplicationService.findById(personId);
